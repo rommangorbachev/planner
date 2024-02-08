@@ -1,4 +1,4 @@
-@import "../../../../assets/styles/base/_variables.sass"
+@import "../../../../../assets/styles/base/variables"
 
 input
   display: block
@@ -10,6 +10,6 @@ input
   border: 1px solid $dark-color
   transition: .3s border-color
   &:hover
-    border: 1px solid $primary-color
-  &:active
-    border: 1px solid $secondary-color
+    border-color: $secondary-color
+  &:focus-visible
+    border-color: $secondary-color !important

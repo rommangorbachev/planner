@@ -1,7 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputFieldComponent } from '../../../../shared/ui/input-field/input-field.component';
-import { tap } from 'rxjs';
+import {
+  InputFieldComponent,
+  TextareaFieldComponent,
+  ActionButtonComponent} from '../../../../shared/ui';
+
 
 @Component({
   selector: 'app-discussion-form',
@@ -10,7 +13,9 @@ import { tap } from 'rxjs';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    InputFieldComponent
+    InputFieldComponent,
+    TextareaFieldComponent,
+    ActionButtonComponent
   ]
 })
 export class DiscussionFormComponent implements OnInit {
@@ -19,10 +24,13 @@ export class DiscussionFormComponent implements OnInit {
 
     ngOnInit() {
       this.form = this.fb.group({
-        id: [],
+        id: [''],
         title: [null, Validators.required],
         description: [null]
       })
-      this.form.valueChanges.pipe(tap(d => console.log(d))).subscribe()
     }
+
+  onSubmit() {
+
+  }
 }

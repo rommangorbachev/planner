@@ -4,10 +4,10 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
 
 @Component({
   selector: 'app-input-field',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
   templateUrl: './input-field.component.html',
   styleUrls: ['./input-field.component.sass'],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {

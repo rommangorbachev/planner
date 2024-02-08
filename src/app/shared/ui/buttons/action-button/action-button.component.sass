@@ -1,0 +1,53 @@
+@import "../../../../../assets/styles/base/variables"
+
+@function rem($pixels, $context: 16)
+  @return #{calc($pixels / $context)}rem
+
+$colorMap: (primary: (text: #fff, dark: $btn-dark-primary, light: $btn-light-primary), secondary: (text: #fff, dark: $btn-dark-secondary, light: $btn-light-secondary))
+
+@mixin button-color-modifiers()
+  @each $color-group, $ruleset in $colorMap
+    &--#{$color-group}
+      color: map-get($ruleset, text)
+      background-color: map-get($ruleset, dark)
+      border-color: map-get($ruleset, light)
+      &:hover
+        background-color: map-get($ruleset, light)
+      &:disabled
+        background-color: map-get($ruleset, light)
+        cursor: not-allowed
+        opacity: 0.5
+      &:active
+        background-color: map-get($ruleset, light)
+
+.action-button
+  border: none
+  border-radius: rem(6)
+  font-size: rem(16)
+  line-height: rem(15)
+  height: rem(50)
+  padding: rem(6) rem(12)
+  min-width: 300px
+  text-transform: uppercase
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  &__wrapper
+    display: flex
+    align-items: center
+    &__icon-left
+      flex-direction: row-reverse
+      img
+        margin: 0 rem(5) 0 0
+
+    img
+      width: rem(24)
+      height: rem(24)
+      margin-left: rem(5)
+  &:disabled
+    color: $dark-color
+  &--outline
+    color: $dark-color
+    background: transparent
+
+  @include button-color-modifiers

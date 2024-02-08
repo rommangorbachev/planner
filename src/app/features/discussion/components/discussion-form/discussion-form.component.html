@@ -1,6 +1,18 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <app-input-field
     formControlName="title"
     [placeholder]="'Название'"
   ></app-input-field>
+  <app-textarea-field
+    formControlName="description"
+    [placeholder]="'Описание темы'"
+  ></app-textarea-field>
+  <button
+    type="submit"
+    actionButton
+    color="primary"
+    outline
+  >
+    Создать тему
+  </button>
 </form>
