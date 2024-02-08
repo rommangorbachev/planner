@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 
-const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', redirectTo:'/main', pathMatch:'full' },
+  { path: 'main',
+    loadChildren: () => import('./features/features.module').then(m => m.FeaturesModule)
+  },
+  { path: '**', redirectTo:'/error?reason=NavError' }
+];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
