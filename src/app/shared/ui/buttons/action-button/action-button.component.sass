@@ -1,24 +1,10 @@
 @import "../../../../../assets/styles/base/variables"
+@import "../../../../../assets/styles/mixins/mixins"
 
 @function rem($pixels, $context: 16)
   @return #{calc($pixels / $context)}rem
 
 $colorMap: (primary: (text: #fff, dark: $btn-dark-primary, light: $btn-light-primary), secondary: (text: #fff, dark: $btn-dark-secondary, light: $btn-light-secondary))
-
-@mixin button-color-modifiers()
-  @each $color-group, $ruleset in $colorMap
-    &--#{$color-group}
-      color: map-get($ruleset, text)
-      background-color: map-get($ruleset, dark)
-      border-color: map-get($ruleset, light)
-      &:hover
-        background-color: map-get($ruleset, light)
-      &:disabled
-        background-color: map-get($ruleset, light)
-        cursor: not-allowed
-        opacity: 0.5
-      &:active
-        background-color: map-get($ruleset, light)
 
 .action-button
   border: none

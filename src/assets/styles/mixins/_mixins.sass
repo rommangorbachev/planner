@@ -1,0 +1,14 @@
+@mixin button-color-modifiers()
+  @each $color-group, $ruleset in $colorMap
+    &--#{$color-group}
+      color: map-get($ruleset, text)
+      background-color: map-get($ruleset, dark)
+      border-color: map-get($ruleset, light)
+      &:hover
+        background-color: map-get($ruleset, light)
+      &:disabled
+        background-color: map-get($ruleset, light)
+        cursor: not-allowed
+        opacity: 0.5
+      &:active
+        background-color: map-get($ruleset, light)
