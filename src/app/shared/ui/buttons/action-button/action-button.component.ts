@@ -25,7 +25,7 @@ export class ActionButtonComponent implements OnInit , IButtonProps {
   }
 
   @HostBinding('class.action-button')
-  _customButtom = true;
+  _customButton = true;
 
   @HostBinding('class.action-button--outline')
   _outline = false;

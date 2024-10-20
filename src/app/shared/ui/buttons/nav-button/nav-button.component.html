@@ -1,0 +1,8 @@
+  <span
+    class="nav-button__wrapper"
+    [ngClass]="'nav-button__wrapper__icon-' + iconAlign"
+  >
+    <ng-content></ng-content>
+    <ng-content select="icon"></ng-content>
+    <span class="label">{{ label }}</span>
+  </span>

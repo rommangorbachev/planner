@@ -1,0 +1,17 @@
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-input-field
+    formControlName="title"
+    [placeholder]="'Критерий'"
+  ></app-input-field>
+  <app-rating-picker
+    formControlName="priority"
+    label="Приоритетность"
+  ></app-rating-picker>
+  <button
+    type="submit"
+    actionButton
+    color="primary">
+    Создать критерий
+  </button>
+</form>

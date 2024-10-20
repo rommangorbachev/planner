@@ -1,0 +1,65 @@
+<label>{{ label }}</label>
+<ng-container [ngSwitch]="value">
+  <ng-container *ngSwitchCase="1">
+    <span >😭</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="2">
+    <span >😢</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="3">
+    <span >😕</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="4">
+    <span >😐</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="5">
+    <span>🙂</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="6">
+    <span>😀</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="7">
+    <span>😁</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="8">
+    <span>😆</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="9">
+    <span>😅</span>
+  </ng-container>
+  <ng-container *ngSwitchCase="10">
+    <span>😂</span>
+  </ng-container>
+</ng-container>
+<ul class="rating-options" [ngClass]="{ disabled: disabled }">
+  <li (click)="setValue(1)">
+    <span [ngClass]="{ checked: value >= 1 }" class="fa fa-star"></span>
+  </li>
+  <li  (click)="setValue(2)">
+    <span [ngClass]="{ checked: value >= 2 }" class="fa fa-star"></span>
+  </li>
+  <li  (click)="setValue(3)">
+    <span [ngClass]="{ checked: value >= 3 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(4)">
+    <span [ngClass]="{ checked: value >= 4 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(5)">
+    <span [ngClass]="{ checked: value >= 5 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(6)">
+    <span [ngClass]="{ checked: value >= 6 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(7)">
+    <span [ngClass]="{ checked: value >= 7 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(8)">
+    <span [ngClass]="{ checked: value >= 8 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(9)">
+    <span [ngClass]="{ checked: value >= 9 }" class="fa fa-star"></span>
+  </li>
+  <li (click)="setValue(10)">
+    <span [ngClass]="{ checked: value === 10 }" class="fa fa-star"></span>
+  </li>
+</ul>

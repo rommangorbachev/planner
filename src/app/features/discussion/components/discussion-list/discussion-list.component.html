@@ -1,0 +1,31 @@
+<app-title title="Темы для анализа"></app-title>
+<ng-container *ngIf="topics$ | async as topics">
+  <ul>
+    @for (discuss of topics; let index = $index; track discuss.id) {
+      <li>
+        <h5>
+          <span>{{ index + 1 }}</span>
+          <b>{{ discuss.title }}</b>
+        </h5>
+        <p>{{ discuss.description }}</p>
+        <button
+          type="button"
+          actionButton
+          [routerLink]="'/main/criteria/' + discuss.id"
+          color="secondary">
+          Критерии
+        </button>
+        <button
+          type="button"
+          actionButton
+          [routerLink]="'/main/map/' + discuss.id"
+          color="secondary">
+          Карта
+        </button>
+      </li>
+    } @empty {
+      <span>Empty list of discussions</span>
+    }
+  </ul>
+</ng-container>
+

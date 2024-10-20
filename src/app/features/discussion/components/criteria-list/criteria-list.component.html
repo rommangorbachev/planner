@@ -1,0 +1,31 @@
+<app-title [title]="topicId"></app-title>
+<app-title title="Критерии"></app-title>
+<ng-container *ngIf="criteria$ | async as criteria">
+  <ul>
+    @for (criterion of criteria; let index = $index; track criterion.id) {
+      <li>
+        <h5>
+          <span>{{ index + 1 }}</span>
+          <b>{{ criterion.title }}</b>
+        </h5>
+        <p>{{ criterion.priority }}</p>
+        <button
+          (click)="editCriterion(criterion)"
+          type="button"
+          actionButton
+          color="secondary">
+          Редактировать
+        </button>
+        <button
+          (click)="removeCriterion(criterion.id)"
+          type="button"
+          actionButton
+          color="secondary">
+          Удалить
+        </button>
+      </li>
+    } @empty {
+      <app-criteria-create [topicId]="topicId" ></app-criteria-create>
+    }
+  </ul>
+</ng-container>

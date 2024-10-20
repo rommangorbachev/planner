@@ -1,4 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-title
+    title="Напишите тему для анализа"
+  ></app-title>
   <app-input-field
     formControlName="title"
     [placeholder]="'Название'"
@@ -10,9 +13,7 @@
   <button
     type="submit"
     actionButton
-    color="primary"
-    outline
-  >
+    color="primary">
     Создать тему
   </button>
 </form>

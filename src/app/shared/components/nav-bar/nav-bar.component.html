@@ -1,0 +1,22 @@
+<ul>
+  @for (menuItem of menuItems; track menuItem.id) {
+    <li
+      [@slideInOutAnimation]="menuItem.selected ? 'selected' : 'notSelected'"
+      (click)="onMenuItemClick(menuItem)"
+
+    >
+      <a
+        type="button"
+        navButton
+        color="primary"
+        [label]="menuItem.label"
+        [iconAlign]="menuItem.iconAlign"
+        [routerLink]="[menuItem.link]"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <img [src]="menuItem.iconPath" alt="" icon />
+      </a>
+    </li>
+  }
+</ul>

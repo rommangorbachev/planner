@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { LayoutComponent } from '../../layout/layout.component';
+import { LayoutComponent } from '../../shared/components/layout/layout.component';
 import { DiscussionFormComponent } from '../discussion/components/discussion-form/discussion-form.component';
+import { DiscussionListComponent } from '../discussion/components/discussion-list/discussion-list.component';
+
 
 @Component({
   selector: 'app-main',
@@ -11,10 +13,11 @@ import { DiscussionFormComponent } from '../discussion/components/discussion-for
     CommonModule,
     RouterOutlet,
     LayoutComponent,
-    DiscussionFormComponent
+    DiscussionFormComponent,
+    DiscussionListComponent
   ],
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.sass']
+  styleUrls: ['./main.component.sass'],
 })
 export class MainComponent {
 

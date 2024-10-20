@@ -2,6 +2,7 @@
   type="text"
   [(ngModel)]="value"
   (ngModelChange)="onChange($event)"
+  (change)="updateValue($event)"
   (blur)="onTouch()"
   [placeholder]="placeholder"
 />

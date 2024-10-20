@@ -1,3 +1,7 @@
+
+
 export const environment = {
-  baseUrl: ''
+  production: true,
+  apiKey: "https://fw-testing.site/",
+  debug: false
 };
