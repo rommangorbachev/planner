@@ -1,20 +1,9 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Inject,
-  inject,
-  OnInit,
-  Optional,
-  Self
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActionButtonComponent, InputFieldComponent, TextareaFieldComponent } from '../../../../shared/ui';
 import { HttpClient } from '@angular/common/http';
 import { Discussion, DiscussionAddDto } from '../../models/Discussion.model';
 import { ApiService } from '../../../../shared/services/_api/api.service';
-import { DiscussionService } from '../../services/discussion.service';
-import { DiscussionModule } from '../../discussion.module';
 import { TitleComponent } from '../../../../shared/ui/title/title.component';
 import { take, tap } from 'rxjs';
 import { Router } from '@angular/router';
@@ -37,10 +26,10 @@ import { Router } from '@angular/router';
       provide: 'DiscussionService',
       useFactory: (http: HttpClient) =>
         new ApiService<Discussion, DiscussionAddDto>(http, {
-          resourceEndpoint: 'api/topics',
-        }
-          ),
-      deps: [HttpClient],
+            resourceEndpoint: 'api/topics'
+          }
+        ),
+      deps: [HttpClient]
     }
   ]
 })
@@ -53,7 +42,8 @@ export class DiscussionFormComponent implements OnInit {
   constructor(
     @Inject('DiscussionService') private discussionService: ApiService<Discussion, DiscussionAddDto>,
     private router: Router
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -72,7 +62,7 @@ export class DiscussionFormComponent implements OnInit {
     this.discussionService.add(model).pipe(
       take(1),
       tap(id => {
-        void this.router.navigate(['/main/criteria/', id])
+        void this.router.navigate(['/main/criteria/', id]);
       })
     ).subscribe();
   }
