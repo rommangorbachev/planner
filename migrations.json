@@ -1,28 +1,25 @@
 {
   "migrations": [
     {
-      "cli": "nx",
-      "version": "20.2.0-beta.2",
-      "description": "Update the ModuleFederationConfig import use @nx/module-federation.",
-      "factory": "./src/migrations/update-20-2-0/migrate-mf-imports-to-new-package",
-      "package": "@nx/angular",
-      "name": "update-20-2-0-update-module-federation-config-import"
+      "version": "18.0.0",
+      "description": "Updates two-way bindings that have an invalid expression to use the longform expression instead.",
+      "factory": "./migrations/invalid-two-way-bindings/bundle",
+      "package": "@angular/core",
+      "name": "invalid-two-way-bindings"
     },
     {
-      "cli": "nx",
-      "version": "20.2.0-beta.2",
-      "description": "Update the withModuleFederation import use @nx/module-federation/angular.",
-      "factory": "./src/migrations/update-20-2-0/migrate-with-mf-import-to-new-package",
-      "package": "@nx/angular",
-      "name": "update-20-2-0-update-with-module-federation-import"
+      "version": "18.0.0",
+      "description": "Replace deprecated HTTP related modules with provider functions",
+      "factory": "./migrations/http-providers/bundle",
+      "package": "@angular/core",
+      "name": "migration-http-providers"
     },
     {
-      "cli": "nx",
-      "version": "20.3.0-beta.2",
-      "description": "If workspace includes Module Federation projects, ensure the new @nx/module-federation package is installed.",
-      "factory": "./src/migrations/update-20-3-0/ensure-nx-module-federation-package",
-      "package": "@nx/angular",
-      "name": "ensure-nx-module-federation-package"
+      "version": "18.1.0",
+      "description": "Updates calls to afterRender with an explicit phase to the new API",
+      "factory": "./migrations/after-render-phase/bundle",
+      "package": "@angular/core",
+      "name": "migration-after-render-phase"
     }
   ]
 }
